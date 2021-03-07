@@ -1,0 +1,58 @@
+Notifier WebApi
+1) VS: create new project 'Blank Solution'
+2) VS: add new ASP.NET Core Web Application named 'Notifier'
+- .NET Core
+- ASP.NET Core 3.1
+- Template: Empty
+- Configure for HTTPS (disabled)
+- Enable Docker Support with Linux (disabled)
+3) Add new API Controller Class - Empty named 'NotifyController.cs'
+- add endpoint
+4) Modify Startup.cs
+5) check via Postman
+) add 'Dockerfile' to the project's root
+6) open cmd -> cd <path> (where Dockerfile located)
+7) docker build -t notifier .
+8) docker images
+9) docker run --rm --name notifier -p 8082:82 -d notifier:latest
+10) docker container ps (running container)
+11) check via Postman http://localhost:8081/api/notify
+
+ShopApi WebApi
+1) VS: add new ASP.NET Core Web Application project named 'ShopApi'
+- .NET Core
+- ASP.NET Core 3.1
+- Template: Empty
+- Configure for HTTPS (disabled)
+- Enable Docker Support with Linux (disabled)
+3) Add new API Controller Class - Empty named 'OrderController.cs'
+- add endpoint
+4) Modify Startup.cs
+5) check via Postman
+) add 'Dockerfile' to the project's root
+6) cd <path> (where Dockerfile located)
+7) docker build -t shopapi .
+8) docker images
+9) docker run --rm --name shopapi -p 8081:81 -d shopapi:latest
+10) docker container ps (running container)
+11) check via Postman http://localhost:8080/api/order (! doesn't work because of exception 'Cannot assign requested address')
+12) inspect logs: docker logs shopapi
+
+Fix:
+- docker network create shop-net
+- docker run --rm --name notifier -p 8082:82 --network shop-net -d notifier:latest
+- docker run --rm --name shopapi -p 8081:81 --network shop-net -e "NotifierUrl=http://notifier:82/api/notify" -d shopapi:latest
+
+Clean:
+- docker container stop shopapi
+- docker container stop notifier
+- docker container ps -a (empty)
+- docker image rm shopapi
+- docker image rm notifier
+- docker images
+//- docker image prune -f (clean all <none> images)
+- docker network rm shop-net
+
+
+
+Docker-Compose:

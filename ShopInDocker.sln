@@ -5,6 +5,14 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notifier", "Notifier\Notifier.csproj", "{D19F6CEF-69A2-4A67-B21B-9FE3C13EF103}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{904A15E5-7199-4500-95AB-59E01D09A371}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Notes.txt = Notes.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopApi", "ShopApi\ShopApi.csproj", "{B2123BFD-EA8C-424D-BDEE-EEBFABAA3096}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,10 @@ Global
 		{D19F6CEF-69A2-4A67-B21B-9FE3C13EF103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D19F6CEF-69A2-4A67-B21B-9FE3C13EF103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D19F6CEF-69A2-4A67-B21B-9FE3C13EF103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2123BFD-EA8C-424D-BDEE-EEBFABAA3096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2123BFD-EA8C-424D-BDEE-EEBFABAA3096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2123BFD-EA8C-424D-BDEE-EEBFABAA3096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2123BFD-EA8C-424D-BDEE-EEBFABAA3096}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

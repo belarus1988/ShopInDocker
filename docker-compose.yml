@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  notifier:
+    build: Notifier/
+    ports:
+      - 8082:82
+    networks:
+      - shop-net
+
+  shopapi:
+    build: ShopApi/
+    ports:
+      - 8081:81
+    networks:
+      - shop-net
+    environment:
+      - NotifierUrl=http://notifier:82/api/notify
+    depends_on:
+      - notifier
+
+networks:
+  shop-net:
+    external: false

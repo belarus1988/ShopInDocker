@@ -56,3 +56,7 @@ Clean:
 
 
 Docker-Compose:
+- create 'docker-compose.yml' file into solution root
+- docker-compose up
+- test
+- docker-compose down

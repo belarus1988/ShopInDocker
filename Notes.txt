@@ -60,3 +60,8 @@ Docker-Compose:
 - docker-compose up
 - test
 - docker-compose down
+
+// ToDo:
+- add modification of Dockerfile
+- debugging (with VC and some extra tools?)
+- use VS Code?
